@@ -1,0 +1,24 @@
+{
+    "name": "otter-support",
+    "version": "0.0.1",
+    "description": "Discord support bot for Otters",
+    "main": "dist/index.js",
+    "dependencies": {
+        "cookiecord": "^0.3.17",
+        "dotenv-safe": "^8.2.0",
+        "ts-node": "^8.6.2",
+        "typescript": "^3.7.5"
+    },
+    "scripts": {
+        "start": "ts-node src"
+    },
+    "devDependencies": {
+        "@types/dotenv-safe": "^8.1.1",
+        "@types/node": "^14.6.3",
+        "@types/ws": "^7.2.6",
+        "@typescript-eslint/eslint-plugin": "^4.2.0",
+        "@typescript-eslint/parser": "^4.2.0",
+        "eslint": "^7.9.0",
+        "prettier": "^2.1.2"
+    }
+}
