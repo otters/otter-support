@@ -1,6 +1,6 @@
 import CookiecordClient from 'cookiecord';
 import dotenv from 'dotenv-safe';
-import PingModule from './modules/ping';
+import OpenSupportModule from './modules/OpenSupportModule';
 
 // Load the variables from .env
 dotenv.config();
@@ -8,11 +8,12 @@ dotenv.config();
 // Create a new Cookiecord client 🍪
 const client = new CookiecordClient({
   botAdmins: process.env.BOT_ADMINS?.split(','),
+  prefix: '!',
 });
 
 // If the bot is running in production, load every module seperate
 if (process.env.NODE_ENV === 'production') {
-  client.registerModule(PingModule);
+  client.registerModule(OpenSupportModule);
 } else {
   client.loadModulesFromFolder('src/modules');
   client.reloadModulesFromFolder('src/modules');

@@ -4,7 +4,7 @@
 #### Installation
 - Clone everything down from the repository
 - Install dependencies with `yarn`
-- Set up your .env
+- Set up your .env according to .env.example
 ```.dotenv
 TOKEN=DISCORD_BOT_TOKEN
 BOT_ADMINS=DISCORD_ADMIN_ID
