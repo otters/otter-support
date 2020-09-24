@@ -66,11 +66,11 @@ export default class OpenSupportModule extends Module {
 
     await msg.react('✅');
 
-    return channel.send({
+    return channel.send(msg.author, {
       embed: {
         color: '#2ed573',
         title: 'Ticket successfully created!',
-        description: 'Ask your question and a staff member will soon be here to help you!',
+        description: `Hey there, ask your question and a staff member will soon be here to help you!`,
         timestamp: new Date(),
         footer: { text: '© Otters | Yet another sneaker dashboard.' },
       },
