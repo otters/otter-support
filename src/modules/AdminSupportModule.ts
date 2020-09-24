@@ -77,6 +77,7 @@ export default class AdminSupportModule extends Module {
       embed: {
         color: '#2ed573',
         title: 'Successfully closed the ticket!',
+        description: 'This ticket will be deleted in 5 seconds',
         timestamp: new Date(),
         footer: { text: '© Otters | Yet another sneaker dashboard.' },
       },
@@ -84,6 +85,6 @@ export default class AdminSupportModule extends Module {
 
     setTimeout(async () => {
       await supportChannel.delete('Support ticket closed by admin');
-    }, 1000);
+    }, 5000);
   }
 }

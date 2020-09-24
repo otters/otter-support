@@ -51,7 +51,7 @@ export default class OpenSupportModule extends Module {
       return msg.channel.send({
         embed: {
           color: '#ff4757',
-          title: 'Try that again',
+          title: 'Something went wrong, try again please',
           timestamp: new Date(),
           footer: { text: '© Otters | Yet another sneaker dashboard.' },
         },
@@ -64,10 +64,13 @@ export default class OpenSupportModule extends Module {
       READ_MESSAGE_HISTORY: true,
     });
 
-    return msg.channel.send({
+    await msg.react('✅');
+
+    return channel.send({
       embed: {
         color: '#2ed573',
         title: 'Ticket successfully created!',
+        description: 'Ask your question and a staff member will soon be here to help you!',
         timestamp: new Date(),
         footer: { text: '© Otters | Yet another sneaker dashboard.' },
       },

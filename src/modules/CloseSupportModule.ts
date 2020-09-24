@@ -38,7 +38,9 @@ export default class CloseSupportModule extends Module {
       });
     }
 
-    const regex = supportChannel?.name.match(/^support-.*-[0-9]{4}$/);
+    const currentChannel = channels?.cache.find(channel => channel.id === msg.channel.id);
+
+    const regex = currentChannel?.name.match(/^support-.*-[0-9]{4}$/);
 
     if (!regex) {
       return msg.channel.send({
@@ -55,6 +57,7 @@ export default class CloseSupportModule extends Module {
       embed: {
         color: '#2ed573',
         title: 'Successfully closed your ticket!',
+        description: 'This ticket will be deleted in 5 seconds',
         timestamp: new Date(),
         footer: { text: '© Otters | Yet another sneaker dashboard.' },
       },
@@ -62,6 +65,6 @@ export default class CloseSupportModule extends Module {
 
     setTimeout(async () => {
       await supportChannel.delete('Support ticket closed');
-    }, 1000);
+    }, 5000);
   }
 }
