@@ -15,7 +15,7 @@ NODE_ENV=development/production
 ####  🛠 Setup in Discord
 Now you are ready to do the setup in Discord, great job! 🥳
 
-There are many optional features and settings but only **the one is required**
+There are many optional features and settings but only **one is required**. Don't worry if you decided to skip the documentation then the bot will give you an error message as soon as you try to use a command 😉
 - **Required** 
     - Create a category named "Support", if you want to run the default code then it is important that the name starts with a capital S. 
 - **Optional**
