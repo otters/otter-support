@@ -1,8 +1,6 @@
-import CookiecordClient from 'cookiecord';
+import CookiecordClient, { HelpModule } from 'cookiecord';
 import dotenv from 'dotenv-safe';
-import OpenSupportModule from './modules/OpenSupportModule';
-import CloseSupportModule from './modules/CloseSupportModule';
-import AdminSupportModule from './modules/AdminSupportModule';
+import TicketModule from './modules/TicketModule';
 
 // Load the variables from .env
 dotenv.config();
@@ -15,13 +13,13 @@ const client = new CookiecordClient({
 
 // If the bot is running in production, load every module seperate 🛠
 if (process.env.NODE_ENV === 'production') {
-  client.registerModule(OpenSupportModule);
-  client.registerModule(CloseSupportModule);
-  client.registerModule(AdminSupportModule);
+  client.registerModule(TicketModule);
 } else {
   client.loadModulesFromFolder('src/modules');
   client.reloadModulesFromFolder('src/modules');
 }
+
+client.registerModule(HelpModule);
 
 client.login(process.env.TOKEN);
 
