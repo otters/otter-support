@@ -17,8 +17,6 @@ export default class TicketModule extends Module {
         embed: {
           color: '#ff4757',
           title: 'Please make sure that the server has a Support category!',
-          timestamp: new Date(),
-          footer: { text: '© Otters | Yet another sneaker dashboard.' },
         },
       });
     }
@@ -32,8 +30,6 @@ export default class TicketModule extends Module {
         embed: {
           color: '#ff4757',
           title: 'You already have an open ticket!',
-          timestamp: new Date(),
-          footer: { text: '© Otters | Yet another sneaker dashboard.' },
         },
       });
     }
@@ -52,8 +48,6 @@ export default class TicketModule extends Module {
         embed: {
           color: '#ff4757',
           title: 'Something went wrong, try again please',
-          timestamp: new Date(),
-          footer: { text: '© Otters | Yet another sneaker dashboard.' },
         },
       });
     }
@@ -71,8 +65,6 @@ export default class TicketModule extends Module {
         color: '#2ed573',
         title: 'Ticket successfully created!',
         description: `Hey there, ask your question and a staff member will soon be here to help you!`,
-        timestamp: new Date(),
-        footer: { text: '© Otters | Yet another sneaker dashboard.' },
       },
     });
   }
@@ -88,8 +80,6 @@ export default class TicketModule extends Module {
         embed: {
           color: '#ff4757',
           title: 'Please make sure that the server has a Support category!',
-          timestamp: new Date(),
-          footer: { text: '© Otters | Yet another sneaker dashboard.' },
         },
       });
     }
@@ -103,8 +93,6 @@ export default class TicketModule extends Module {
         embed: {
           color: '#ff4757',
           title: 'You have no open ticket!',
-          timestamp: new Date(),
-          footer: { text: '© Otters | Yet another sneaker dashboard.' },
         },
       });
     }
@@ -118,8 +106,6 @@ export default class TicketModule extends Module {
         embed: {
           color: '#ff4757',
           title: 'Execute this command inside your ticket!',
-          timestamp: new Date(),
-          footer: { text: '© Otters | Yet another sneaker dashboard.' },
         },
       });
     }
@@ -129,8 +115,6 @@ export default class TicketModule extends Module {
         color: '#2ed573',
         title: 'Successfully closed your ticket!',
         description: 'This ticket will be deleted in 5 seconds',
-        timestamp: new Date(),
-        footer: { text: '© Otters | Yet another sneaker dashboard.' },
       },
     });
 
@@ -148,8 +132,6 @@ export default class TicketModule extends Module {
         embed: {
           color: '#ff4757',
           title: 'Please add adminIDs first',
-          timestamp: new Date(),
-          footer: { text: '© Otters | Yet another sneaker dashboard.' },
         },
       });
     }
@@ -161,8 +143,6 @@ export default class TicketModule extends Module {
         embed: {
           color: '#ff4757',
           title: 'This command can only be executed by admins!',
-          timestamp: new Date(),
-          footer: { text: '© Otters | Yet another sneaker dashboard.' },
         },
       });
     }
@@ -174,8 +154,6 @@ export default class TicketModule extends Module {
         embed: {
           color: '#ff4757',
           title: 'Please make sure that the server has a Support category!',
-          timestamp: new Date(),
-          footer: { text: '© Otters | Yet another sneaker dashboard.' },
         },
       });
     }
@@ -189,8 +167,6 @@ export default class TicketModule extends Module {
         embed: {
           color: '#ff4757',
           title: 'Execute this command inside a ticket!',
-          timestamp: new Date(),
-          footer: { text: '© Otters | Yet another sneaker dashboard.' },
         },
       });
     }
@@ -200,8 +176,6 @@ export default class TicketModule extends Module {
         embed: {
           color: '#ff4757',
           title: 'You have no open ticket!',
-          timestamp: new Date(),
-          footer: { text: '© Otters | Yet another sneaker dashboard.' },
         },
       });
     }
@@ -211,8 +185,6 @@ export default class TicketModule extends Module {
         color: '#2ed573',
         title: 'Successfully closed the ticket!',
         description: 'This ticket will be deleted in 5 seconds',
-        timestamp: new Date(),
-        footer: { text: '© Otters | Yet another sneaker dashboard.' },
       },
     });
 
