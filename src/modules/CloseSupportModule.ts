@@ -38,6 +38,19 @@ export default class CloseSupportModule extends Module {
       });
     }
 
+    const regex = supportChannel?.name.match(/^support-.*-[0-9]{4}$/);
+
+    if (!regex) {
+      return msg.channel.send({
+        embed: {
+          color: '#ff4757',
+          title: 'Execute this command inside your ticket!',
+          timestamp: new Date(),
+          footer: { text: '© Otters | Yet another sneaker dashboard.' },
+        },
+      });
+    }
+
     msg.channel.send({
       embed: {
         color: '#2ed573',
@@ -47,6 +60,8 @@ export default class CloseSupportModule extends Module {
       },
     });
 
-    await supportChannel.delete('Support ticket closed');
+    setTimeout(async () => {
+      await supportChannel.delete('Support ticket closed');
+    }, 1000);
   }
 }
