@@ -10,6 +10,7 @@ export default class TicketModule extends Module {
   async open(msg: Message) {
     const channels = msg.guild?.channels;
 
+    // We try to fetch a category with the name Support
     const supportCategory = channels?.cache.find(channel => channel.name === 'Support');
 
     if (!supportCategory) {
@@ -21,10 +22,12 @@ export default class TicketModule extends Module {
       });
     }
 
+    // Here we try to fetch a channel which follows the format support-username-discriminator.
     const supportChannel = channels?.cache.find(
       channel => channel.name === `support-${msg.author.username}-${msg.author.discriminator}`.toLowerCase(),
     );
 
+    // If such a channel exists then the user already has a ticket!
     if (supportChannel) {
       return msg.channel.send({
         embed: {
@@ -34,6 +37,7 @@ export default class TicketModule extends Module {
       });
     }
 
+    // If such a channel does not exist we can create one and open a new ticket :)
     const channel = await msg.guild?.channels.create(
       `support-${msg.author.username}-${msg.author.discriminator}`.toLowerCase(),
       {
@@ -43,6 +47,7 @@ export default class TicketModule extends Module {
       },
     );
 
+    // Oops, something went wrong creating that ticket
     if (!channel) {
       return msg.channel.send({
         embed: {
@@ -52,6 +57,7 @@ export default class TicketModule extends Module {
       });
     }
 
+    // We set specific permission so that the user can access his ticket
     await channel.updateOverwrite(msg.author.id, {
       VIEW_CHANNEL: true,
       SEND_MESSAGES: true,
@@ -73,6 +79,7 @@ export default class TicketModule extends Module {
   async close(msg: Message) {
     const channels = msg.guild?.channels;
 
+    // We try to fetch a category with the name Support
     const supportCategory = channels?.cache.find(channel => channel.name === 'Support');
 
     if (!supportCategory) {
@@ -84,10 +91,12 @@ export default class TicketModule extends Module {
       });
     }
 
+    // Here we try to fetch a channel which follows the format support-username-discriminator.
     const supportChannel = channels?.cache.find(
       channel => channel.name === `support-${msg.author.username}-${msg.author.discriminator}`.toLowerCase(),
     );
 
+    // If no channel exists then the user has no ticket to close
     if (!supportChannel) {
       return msg.channel.send({
         embed: {
@@ -97,6 +106,7 @@ export default class TicketModule extends Module {
       });
     }
 
+    // Here we fetch the channel where the command was executed and make sure that the user used !close in his own ticket
     const currentChannel = channels?.cache.find(channel => channel.id === msg.channel.id);
 
     const regex = currentChannel?.name.match(/^support-.*-[0-9]{4}$/);
@@ -127,6 +137,7 @@ export default class TicketModule extends Module {
   async forceclose(msg: Message) {
     const channels = msg.guild?.channels;
 
+    // Make sure that the person using the command is an admin in .env
     if (!process.env.BOT_ADMINS) {
       return msg.channel.send({
         embed: {
@@ -147,6 +158,7 @@ export default class TicketModule extends Module {
       });
     }
 
+    // We try to fetch a category with the name Support
     const supportCategory = channels?.cache.find(channel => channel.name === 'Support');
 
     if (!supportCategory) {
@@ -158,6 +170,7 @@ export default class TicketModule extends Module {
       });
     }
 
+    // Here we fetch the channel where the command was executed and make sure that it is executed inside a ticket
     const supportChannel = channels?.cache.find(channel => channel.id === msg.channel.id);
 
     const regex = supportChannel?.name.match(/^support-.*-[0-9]{4}$/);
