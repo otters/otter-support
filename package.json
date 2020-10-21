@@ -10,7 +10,9 @@
         "typescript": "^3.7.5"
     },
     "scripts": {
-        "start": "ts-node src"
+        "start": "ts-node src",
+        "preinstall": "node -e \"if (!process.env.npm_execpath.includes('yarn')) throw new Error('Use `yarn` for installing: https://yarnpkg.com/en/docs/install')\"",
+
     },
     "devDependencies": {
         "@types/dotenv-safe": "^8.1.1",
